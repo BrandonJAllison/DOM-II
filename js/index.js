@@ -1,10 +1,11 @@
-//opacity for nav bar
-const navBar = document.querySelector(".main-navigation");
-navBar.addEventListener("scroll", function() {
 
-if (navBar.position > 0 ) {
-navBar.style.opacity = ".5";
-}
+//greensock animation attempt
+const logoImg = document.querySelector('.logo-heading');
+logoImg.addEventListener('mousedown', function(e){
+
+        TweenMax.to(".logo-heading", 2, {x: 300, ease: Bounce.easeOut});
+     
+     
 });
 
 //change header image on click 
