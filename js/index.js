@@ -6,6 +6,36 @@ window.addEventListener("load", function(e) {
     setTimeout(4000);
   });
 
+//kyboard event
+  window.addEventListener("keydown", e => {
+    if (event.key == "v") {
+      document.body.style.background = "silver";
+    }
+  });
+  window.addEventListener("keyup", e => {
+    if (event.key == "v") {
+      document.body.style.background = "";
+    }
+  });
+  
+//touchevent for touch screen
+
+  function update(event) {
+    for (let dot; dot = document.querySelector("dot");) {
+      dot.remove();
+    }
+    for (let i = 0; i < event.touches.length; i++) {
+      let {pageX, pageY} = event.touches[i];
+      let dot = document.createElement("dot");
+      dot.style.left = (pageX - 50) + "px";
+      dot.style.top = (pageY - 50) + "px";
+      document.body.appendChild(dot);
+    }
+  }
+  window.addEventListener("touchstart", update);
+  window.addEventListener("touchmove", update);
+  window.addEventListener("touchend", update);
+
 
 //greensock animation attempt
 const logoImg = document.querySelector('.logo-heading');
