@@ -1,14 +1,22 @@
 
+
+//load an alert
+window.addEventListener("load", function(e) {
+    alert("All aboard the fun bus!");
+    setTimeout(4000);
+  });
+
+
 //greensock animation attempt
 const logoImg = document.querySelector('.logo-heading');
 logoImg.addEventListener('mousedown', function(e){
 
-        TweenMax.to(".logo-heading", 2, {x: 300, ease: Bounce.easeOut});
+TweenMax.to(".logo-heading", 2, {x: 300, ease: Bounce.easeOut});
      
      
 });
 
-//change header image on click 
+//change header image on mouseover 
 const headImg = document.querySelector("img");
 headImg.addEventListener('mouseover', function(e){
 headImg.style.borderRadius = "50px";
@@ -21,6 +29,12 @@ headImg.addEventListener('mouseleave', function(e){
     e.stopPropagation();
     
     })
+
+    headImg.addEventListener('dblclick', function(e){
+        headImg.style.display = "none";
+        e.stopPropagation();
+        
+        })
 
 
 //opacity for mouseover images
@@ -104,8 +118,6 @@ currentValue.addEventListener('mouseleave', function(event){
 })
 
 
-
-
 //sound for mouse down 
 const button = document.querySelectorAll('.btn');
 const arrBtn = Array.from(button);
@@ -126,7 +138,7 @@ sound2.setAttribute('src', "img/yodel.mp3");
 const mtnBtn = arrBtn[1];
 mtnBtn.addEventListener('mousedown', function(){
 sound2.play(); 
-
+//need to append
 
 })
 
@@ -140,5 +152,16 @@ sound.currentTime = 0;
 })
 });
 
+
+
+//change footer color on wheel
+const footer = document.querySelector ('.footer p');
+footer.addEventListener('wheel', function(){
+console.log ('its working');
+    
+    footer.style.backgroundColor = 'tan';
+    
+
+});
 
 
